@@ -1,0 +1,10 @@
+[project]
+name = "unclad-comfy-nodes"
+version = "0.1.0"
+description = "Unclad Comfy Nodes for ComfyUI, including Prompt Studio."
+requires-python = ">=3.10"
+
+[tool.comfy]
+PublisherId = "unclad-collection"
+DisplayName = "Unclad Comfy Nodes"
+Icon = ""
