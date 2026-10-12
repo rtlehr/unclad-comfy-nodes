@@ -1,62 +1,35 @@
 # Unclad Comfy Nodes
 
-A growing ComfyUI custom-node package from Unclad Collection.
+A collection of custom nodes for ComfyUI focused on prompt creation, workflow utilities, image preview, preset libraries, and creative workflow tools.
 
-## Included in this first build
+## Included Nodes
 
 ### Unclad Prompt Studio
-An all-in-one prompt composer with:
+Build prompts using reusable libraries for:
 
-- Prompt Prefix
-- Main Prompt Content
-- Look & Feel visual library
-- Lighting visual library
-- Camera visual library
-- Prompt Suffix
-- Live concatenated prompt preview
-- One final STRING output
+- Look & Feel
+- Lighting
+- Camera
+- Creative Enhancements
 
-`No Preset` is available inside each visual library so a selected preset can be removed. Preset dropdowns are intentionally hidden; presets are selected through the libraries.
+Includes visual preset browsing and thumbnail previews.
 
-## Install
+### Unclad Image Size Preset
+Provides common image sizes for:
 
-Copy the `unclad_comfy_nodes` folder into:
+- General image generation
+- Websites
+- Social media
+- Print
+- Posters
+- Wallpapers and covers
 
-```text
-ComfyUI/custom_nodes/
-```
+### Unclad Image Preview
+Preview one image or compare two images with an interactive A/B comparison slider.
 
-Restart ComfyUI. Find the node under:
+## Installation
 
-```text
-Unclad Comfy Nodes > Prompt Tools > Unclad Prompt Studio
-```
+Clone this repository into your ComfyUI custom nodes folder:
 
-## Thumbnail libraries
-
-Thumbnail folders are:
-
-```text
-unclad_comfy_nodes/thumbnails/look_and_feel/
-unclad_comfy_nodes/thumbnails/lighting/
-unclad_comfy_nodes/thumbnails/camera/
-```
-
-Use the same slugged filenames as the existing galleries, for example:
-
-```text
-Pixar-Inspired 3D -> pixar-inspired-3d.webp
-Golden Hour -> golden-hour.webp
-Natural 50mm -> natural-50mm.webp
-```
-
-Supported formats: `.webp`, `.jpg`, `.jpeg`, `.png`.
-
-This build intentionally does not include the Composition preset node.
-
-## Before public publishing
-
-- Copy your existing thumbnail images into the three thumbnail folders.
-- Choose and add a license.
-- Add repository/author metadata to `pyproject.toml` if desired.
-- Test on a clean ComfyUI installation.
+```bash
+git clone https://github.com/rtlehr/unclad-comfy-nodes.git
