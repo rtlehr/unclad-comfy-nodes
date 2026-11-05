@@ -1806,16 +1806,48 @@ function createPromptStudioPanel(
 
                 hideOnZoom:
                     false,
+
+                margin:
+                    0,
+
+                // ComfyUI frontend 1.53+ DOM-widget layout API.
+                getMinHeight:
+                    () => 610,
+
+                getMaxHeight:
+                    () => 610,
+
+                getHeight:
+                    () => 610,
             }
         );
 
 
     /*
-     * Explicit size for the DOM widget.
+     * ComfyUI frontend compatibility:
+     * - Newer frontends use computeLayoutSize().
+     * - Older frontends still use computeSize().
+     * Keep both so the node works across versions.
      */
+    widget.computeLayoutSize =
+        () => ({
+            minHeight:
+                610,
+
+            maxHeight:
+                610,
+
+            minWidth:
+                900,
+        });
+
+
     widget.computeSize =
         (width) => [
-            width,
+            Math.max(
+                width ?? 940,
+                900
+            ),
             610,
         ];
 

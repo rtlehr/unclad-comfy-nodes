@@ -253,6 +253,21 @@ function syncComparePanelSize(node) {
         ui.root.style.height =
             `${compareWidgetHeight}px`;
 
+        ui.widget.computeLayoutSize =
+            () => ({
+                minHeight:
+                    compareWidgetHeight,
+
+                maxHeight:
+                    compareWidgetHeight,
+
+                minWidth:
+                    Math.max(
+                        usableWidth,
+                        596
+                    ),
+            });
+
         ui.widget.computeSize =
             () => [
                 usableWidth,
@@ -267,6 +282,21 @@ function syncComparePanelSize(node) {
          */
         ui.root.style.height =
             "40px";
+
+        ui.widget.computeLayoutSize =
+            () => ({
+                minHeight:
+                    40,
+
+                maxHeight:
+                    40,
+
+                minWidth:
+                    Math.max(
+                        usableWidth,
+                        396
+                    ),
+            });
 
         ui.widget.computeSize =
             () => [
@@ -1520,8 +1550,52 @@ function createComparePanel(node) {
 
                 hideOnZoom:
                     false,
+
+                margin:
+                    0,
+
+                // ComfyUI frontend 1.53+ DOM-widget layout API.
+                getMinHeight:
+                    () => (
+                        node.ucHasImageB
+                            ? 500
+                            : 40
+                    ),
+
+                getMaxHeight:
+                    () => (
+                        node.ucHasImageB
+                            ? 500
+                            : 40
+                    ),
+
+                getHeight:
+                    () => (
+                        node.ucHasImageB
+                            ? 500
+                            : 40
+                    ),
             }
         );
+
+
+    widget.computeLayoutSize =
+        () => ({
+            minHeight:
+                node.ucHasImageB
+                    ? 500
+                    : 40,
+
+            maxHeight:
+                node.ucHasImageB
+                    ? 500
+                    : 40,
+
+            minWidth:
+                node.ucHasImageB
+                    ? 596
+                    : 396,
+        });
 
 
     widget.computeSize =
